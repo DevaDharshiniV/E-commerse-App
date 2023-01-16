@@ -1,0 +1,67 @@
+.example-card {
+  max-width: 400px;
+  height:500px;
+  background-color: #fe7773;
+  width: 300px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.c{
+  margin-left: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.c3{
+  box-sizing: border-box;
+  border-radius: 50%;
+
+}
+#ch3{
+  height:410px;
+  width: 298px;
+  margin-left:1px;
+  margin-top:1px;
+}
+.c2{
+  box-sizing: border-box;
+  border-radius: 50%;
+
+}
+#ch2{
+  height:410px;
+  width: 298px;
+  margin-left:1px;
+  margin-right:10px;
+  margin-top:1px;
+}
+.c1{
+  box-sizing: border-box;
+  border-radius: 50%;
+
+}
+#ch1{
+  height:410px;
+  width: 298px;
+  margin-left:1px;
+  margin-top:1px;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: purple;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.h2{
+  margin-top: 20px;
+}

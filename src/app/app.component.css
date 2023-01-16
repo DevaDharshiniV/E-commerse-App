@@ -1,0 +1,43 @@
+.header{
+  background-color: #fe7773;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.logo{
+  font-style: italic;
+  font-family: cursive;
+  color:white;
+}
+.login,.about,.contact, .home{
+  font-style: italic;
+  color:white;
+}
+
+.example-icon{
+  color: white;
+}
+.mat-elevation-z5{
+  position:relative;
+  z-index: 2;
+}
+#cat{
+  color:#fe7773;
+  border-radius: 0.1%;
+  box-shadow: 5px 10px #fe7873b4;
+}
+#cat:hover{
+  color:white;
+  background-color: #fe7773;
+  opacity: 1;
+  box-shadow: 5px 10px #dda7a5d3;
+}
+
+
+
+
+
+
+
+
+

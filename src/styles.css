@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-drawer-container{
+  background-color: white;
+}
+.mat-drawer{
+  background-color: #fe7773;
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: white;
+}
+.mat-drawer-transition .mat-drawer-backdrop {
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-property: background-color,visibility;
+  background: transparent;
+}
+.nav{
+  color:white;
+
+}
+/*
+.mat-drawer-content{
+  width:25%;
+}
+*/
