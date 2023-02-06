@@ -1,0 +1,38 @@
+<div class="register-card">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Create your account</div>
+    </div>
+    <div class="card-content">
+      <form [formGroup]="registerForm">
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" formControlName="email" placeholder="Enter your email">
+          <div class="error-message" *ngIf="email.invalid && email.touched">
+            {{ getEmailErrorMessage() }}
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Password</label>
+          <input type="password" formControlName="password" placeholder="Enter your Password">
+          <div class="error-message" *ngIf="password.invalid && password.touched">
+            {{ getPasswordErrorMessage() }}
+          </div>
+        </div>
+        <div class="form-field">
+          <label style="width: 40%;">Confirm Password</label>
+          <input type="password" formControlName="confirmPassword" placeholder="Re-enter Password">
+          <div class="error-message" *ngIf="confirmPassword.invalid && confirmPassword.touched">
+            {{ getConfirmPasswordErrorMessage() }}
+          </div>
+        </div>
+        <div class="register">
+          <button [disabled]="registerForm.invalid" class="register-button" (click)="onSubmit()">Create account</button>
+        </div>
+        <a [routerLink]="'/login'">Already have an account? Login in</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+

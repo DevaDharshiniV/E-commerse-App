@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -24,15 +23,21 @@ import { ProductComponent } from './product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from './about/about.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FproductComponent } from './fproduct/fproduct.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ReviewComponent } from './review/review.component';
+import { LoginComponent } from './login/login.component';
+import { AddressComponent } from './address/address.component';
+import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+
 
 
 
 const routes: Routes = [
 
-  {
-    path: 'login', component: LoginComponent
-
-  },
   {
     path: '', component: ProductComponent
   },
@@ -41,17 +46,47 @@ const routes: Routes = [
   },
   {
     path: 'about', component:AboutComponent
-  }
-
+  },
+  {
+    path: 'fproduct', component:FproductComponent
+  },
+   {
+     path: 'shopping-cart', component:ShoppingCartComponent
+   },
+   {
+    path: 'review', component: ReviewComponent
+   },
+   {
+    path: 'address', component: AddressComponent
+   },
+   {
+    path: 'login', component: LoginComponent
+   },
+   {
+    path: 'register', component:RegisterComponent
+   },
+   {
+    path: 'payment', component:PaymentComponent
+   },
+   {
+    path: 'confirmation', component:ConfirmationComponent
+   }
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     SidenavComponent,
     ProductComponent,
     ContactComponent,
     AboutComponent,
+    FproductComponent,
+    ShoppingCartComponent,
+    ReviewComponent,
+    LoginComponent,
+    AddressComponent,
+    RegisterComponent,
+    PaymentComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -72,8 +107,13 @@ const routes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'product', component: ProductComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

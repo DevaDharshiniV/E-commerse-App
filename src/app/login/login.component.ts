@@ -1,48 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
-declare function VerifyLogin(): void;
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+export class LoginComponent {
+  email: string;
+  password: string;
 
-export class LoginComponent implements OnInit {
-  formGroup: any
-  constructor() {
-    // VerifyLogin();
-    this.formGroup = new FormGroup({
-      email: new FormControl("", Validators.required),
-      password: new FormControl("", Validators.required),
-      remail: new FormControl("", Validators.required),
-      rpassword: new FormControl("", Validators.required),
-      cpassword: new FormControl("", Validators.required),
+  onSubmit() {
+    // validate email and password
+    if (!this.email || !this.password) {
+      alert('Please enter your email and password');
+      return;
+    }
 
-    })
-
+    // perform actual login logic here, e.g. calling a backend API to check the credentials
   }
-  ngOnInit(): void {
 
-  }
- /* loginForm(): void{
-    console.log(this.formGroup.value)
-    if (this.formGroup.status==="VALID"){
-      console.log('Success')
-      //Should call API and submit form data
-    }
-    else{
-      console.log('Error')
-    }
-  }
-  registerForm(): void{
-    console.log(this.formGroup.value)
-    if (this.formGroup.status==="VALID"){
-      console.log('Success')
-      //Should call API and submit form data
-    }
-    else{
-      console.log('Error')
-    }
-  }*/
 }

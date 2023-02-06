@@ -1,0 +1,22 @@
+<h1>Review Your Order</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cartItems">
+      <td>{{ item.fname }}</td>
+      <td>{{ item.quantity}}</td>
+      <td>{{ item.price }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="tot">
+  Total: {{ total }}
+</div>
+<button (click)="submitOrder()">Confirm Order</button>
+<!-- [routerLink]="'/address'" -->

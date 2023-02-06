@@ -1,0 +1,21 @@
+<h3 class="heading">Enter the Payment Details:</h3>
+<form class="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="cardName">Name on Card:</label>
+    <input class="form-control" type="text" id="cardName" [(ngModel)]="paymentDetails.cardName" name="cardName" required>
+  </div>
+  <div class="form-group">
+    <label for="cardNumber">Card Number:</label>
+    <input class="form-control" type="text" id="cardNumber" [(ngModel)]="paymentDetails.cardNumber" name="cardNumber" required>
+    
+  </div>
+  <div class="form-group">
+    <label for="expirationDate">Expiration Date:</label>
+    <input class="form-control" type="text" id="expirationDate" [(ngModel)]="paymentDetails.expirationDate" name="expirationDate" required>
+  </div>
+  <div class="form-group">
+    <label for="cvv">CVV:</label>
+    <input class="form-control" type="text" id="cvv" [(ngModel)]="paymentDetails.cvv" name="cvv" required>
+  </div>
+  <button class="btn" type="submit" [disabled]="!formValid" [routerLink]="'/confirmation'">Pay</button>
+</form>

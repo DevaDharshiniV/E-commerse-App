@@ -15,7 +15,7 @@
     background: #fff;
     display: flex;
     box-sizing: border-box;
-    border:1px solid #fe7773
+    border:1px solid #fe7773;
 }
 .contact-left{
     flex-basis: 60%;
@@ -116,4 +116,28 @@ tr td{
 
 .social-icons a:hover {
   transform: scale(1.05);
+}
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .contact-box {
+    flex-direction: column;
+  }
+
+  .contact-left, .contact-right {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-row .input-group {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
 }

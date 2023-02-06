@@ -1,0 +1,16 @@
+<h1>Order Placed Successfully!</h1>
+<div class="order">
+<p>Thank you for your order! Your order number is {{orderNumber}}</p>
+</div>
+<div class="details">
+    <p>Total Amount: {{total}}</p>
+    <p>Delivery Details:</p>
+    <p>Name: {{address.name}}</p>
+    <p>Street: {{address.street}}</p>
+    <p>City: {{address.city}}</p>
+    <p>State: {{address.state}}</p>
+    <p>Zip: {{address.zip}}</p>
+  </div>
+  <div class="continue">
+  <button  type="submit" [routerLink]="'/product'">Continue Shopping</button>
+</div>

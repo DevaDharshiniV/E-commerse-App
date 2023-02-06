@@ -1,18 +1,18 @@
-
+<!--
 <div class="c">
   <div class="c1">
     <mat-card class="example-card">
-      <img mat-card-image id="ch1" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR8B0ZRig9lwv5s4VknICEya3YwJtHJ9axxd3djsOwdpwvvzKoIJjZxXT8AMUarCmv3KaUHqnEuiuygQDxGV23wiQYaV-ehjflzj7ppXOczx6fuCVdml24VzhA" alt="Photo of a Shiba Inu">
+      <img mat-card-image id="ch1" src="../../assets/img/rc.jpg" alt="Gorgeous jaipur kurta">
       <mat-card-content>
-        <a href="#"><h2>Jaipur Kurta with Dupatta</h2></a>
-        <h3>Rs.819</h3>
+        <a routerLink="fproduct"><h2>Jaipur Kurta with Dupatta</h2></a>
+        <h3>Rs.940</h3>
       </mat-card-content>
       </mat-card>
   </div>
   <div class="c2">
     <mat-card class="example-card">
 
-      <img mat-card-image id ="ch2" src="https://m.media-amazon.com/images/I/6195I2TSm8L._UY741_.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image id ="ch2" src="../../assets/img/wc.jpg" alt="Photo of a White Kurta">
       <mat-card-content>
         <a href="#"><h2>White Kurta</h2></a>
         <h3>Rs.819</h3>
@@ -22,11 +22,23 @@
   </div>
   <div class="c3">
     <mat-card class="example-card">
-      <img mat-card-image id="ch3" src="https://m.media-amazon.com/images/I/71W754Xc92L._UY741_.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image id="ch3" src="../../assets/img/bc.jpg" alt="Photo of a Shiba Inu">
       <mat-card-content>
         <a href="#"><h2>Black Georgette Gown</h2></a>
         <h3>Rs.1159</h3>
       </mat-card-content>
     </mat-card>
   </div>
+</div> -->
+<div class="c">
+  <div *ngFor="let product of products" class="c1">
+    <div class="example-card">
+      <img class="example-card-image" [src]="product.imgSrc" [alt]="product.alt">
+      <div class="example-card-content">
+        <a [routerLink]="product.link"><h2>{{ product.title }}</h2></a>
+        <h3>{{ product.price }}</h3>
+      </div>
+    </div>
+  </div>
 </div>
+
