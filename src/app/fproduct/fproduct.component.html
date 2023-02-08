@@ -13,7 +13,7 @@
       <div>
         <label for="size" class="size-selector">Size:</label>
         <select id="size" [(ngModel)]="selectedSize">
-          <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
+          <option *ngFor="let size of product.sizes" placeholder="S">{{size}}</option>
         </select>
       </div>
       <button (click)="addToCart()">Add to Cart</button>

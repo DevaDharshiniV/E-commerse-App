@@ -14,7 +14,6 @@
       <tr>
         <th>Item Name</th>
         <th>Image</th>
-        <th>Description</th>
         <th>Quantity</th>
         <th>Price</th>
         <th>Total</th>
@@ -27,9 +26,8 @@
         <td class="shopping-cart-item-image" >
           <img [src]="item.image" [alt]="item.fname">
         </td>
-        <td  class="shopping-cart-item-description">{{ item.description }}</td>
         <td class="shopping-cart-item-quantity">
-          <input type="number" [(ngModel)]="item.quantity" (change)="updateTotal()" min="0" >
+          <input type="number" [(ngModel)]="item.quantity" (change)="updateTotal()" min="1" style="width: 50px;">
         </td>
         <td class="shopping-cart-item-price">{{ item.price | currency:"INR" }}</td>
         <td class="shopping-cart-item-total">{{ item.price * item.quantity | currency:"INR" }}</td>
