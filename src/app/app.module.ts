@@ -32,6 +32,8 @@ import { AddressComponent } from './address/address.component';
 import { RegisterComponent } from './register/register.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ProductService } from './product.service';
+import { KproductsComponent } from './kproducts/kproducts.component';
 
 
 
@@ -70,7 +72,16 @@ const routes: Routes = [
    },
    {
     path: 'confirmation', component:ConfirmationComponent
-   }
+   },
+
+   {
+    path: 'product', component:ProductComponent
+   },
+   {
+    path: 'kproducts', component: KproductsComponent
+   },
+   { path: 'fproduct/:id', component: FproductComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -86,7 +97,8 @@ const routes: Routes = [
     AddressComponent,
     RegisterComponent,
     PaymentComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    KproductsComponent
   ],
   imports: [
     BrowserModule,
@@ -108,11 +120,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'product', component: ProductComponent }
-    ])
+    // RouterModule.forRoot([
+    //   { path: 'product', component: ProductComponent }
+    // ])
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 

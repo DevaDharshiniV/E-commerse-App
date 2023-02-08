@@ -23,7 +23,7 @@ export class ReviewComponent implements OnInit{
 
     // Perform logic to submit the order, such as sending data to a server or displaying a success message
     console.log("Order submitted!");
-    // localStorage.clear();
+    localStorage.clear();
     this.cartItems = [];
     localStorage.setItem('total', JSON.stringify(ravedTotal));
     this.total = 0;

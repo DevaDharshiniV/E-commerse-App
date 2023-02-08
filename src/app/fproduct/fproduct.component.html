@@ -1,23 +1,24 @@
 <div class="product-page">
   <img [src]="product.image" [alt]="product.fname">
-
   <form>
     <div>
-      <h2 class="product-name">{{product.fname}}</h2>
+      <h2 class="product-name">{{ product.fname }}</h2>
       <h3 class="d">Details</h3>
       <ul class="product-des">
         <li *ngFor="let detail of product.details">{{ detail }}</li>
       </ul>
       <h3 class="d">Description</h3>
-      <p  class="product-des">{{product.description}}</p>
-      <p class="product-price">Price: {{product.price | currency:'INR'}}</p>
-      <!-- <label for="quantity" class="quantity-selector">Quantity:</label>
-      <input type="number" value="1" class="quantity-box"id="quantity" [(ngModel)]="quantity" (change)="calculateTotalPrice()" min="1">-->
+      <p class="product-des">{{ product.description }}</p>
+      <p class="product-price">Price: {{ product.price | currency:'INR' }}</p>
+      <div>
+        <label for="size" class="size-selector">Size:</label>
+        <select id="size" [(ngModel)]="selectedSize">
+          <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
+        </select>
+      </div>
+      <button (click)="addToCart()">Add to Cart</button>
+      <p *ngIf="addedToCart" class="message">{{ message }}</p>
     </div>
-    <!--<div>
-      <p class="quantity-selector">TotalPrice: {{ totalPrice | currency:"INR" }}</p>
-    </div> -->
-    <button (click)="addToCart()">Add to Cart</button>
-    <p *ngIf="addedToCart" class="message">{{ message }}</p>
   </form>
 </div>
+

@@ -18,22 +18,30 @@ export class ProductComponent {
       title: 'Jaipur Kurta with Dupatta',
       price: 'Rs. 940',
       imgSrc: '../../assets/img/rc.jpg',
-      link: 'fproduct',
+      link: '/fproduct/1',
       alt: 'Gorgeous jaipur kurta'
     },
     {
       title: 'White Kurta',
       price: 'Rs. 819',
       imgSrc: '../../assets/img/wc.jpg',
-      link: '',
+      link: '/fproduct/2',
       alt: 'Photo of a White Kurta'
     },
     {
       title: 'Black Georgette Gown',
       price: 'Rs. 1159',
       imgSrc: '../../assets/img/bc.jpg',
-      link: '',
-      alt: 'Photo of a Shiba Inu'
+      link: '/fproduct/3',
+      alt: 'Photo of a Black Gown'
+    },
+    {
+      title: 'Women Lehenga Choli',
+      price: 'Rs. 1899',
+      imgSrc: '../../assets/img/pc.jpg',
+      link: '/fproduct/4',
+      alt: 'Photo of a Lehenga'
+
     }
   ];
 

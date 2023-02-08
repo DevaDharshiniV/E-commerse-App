@@ -50,7 +50,7 @@ p {
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   table,
   .total-container {
     width: 100%;
@@ -66,7 +66,7 @@ p {
  .shopping-cart-item-description {
     align-items: center;
    }
- }
+ } */
  .emptycart {
   width: 400px;
   height: 300px;
@@ -107,3 +107,31 @@ p {
     margin-top: 1rem;
   }
 }
+@media (max-width: 767px) {
+  .shopping-cart-container {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  img {
+    width: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .b {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+

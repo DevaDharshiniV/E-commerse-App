@@ -24,7 +24,7 @@
     <tbody>
       <tr *ngFor="let item of cartItems" >
         <td class="shopping-cart-item-name">{{ item.fname }}</td>
-        <td class="shopping-cart-item-image">
+        <td class="shopping-cart-item-image" >
           <img [src]="item.image" [alt]="item.fname">
         </td>
         <td  class="shopping-cart-item-description">{{ item.description }}</td>
@@ -45,4 +45,49 @@
     <button  class="b" (click)="checkout()" [routerLink]="'/review'">Checkout</button>
   </div>
 </div>
+<!-- <ng-template [ngIf]="cartItems.length === 0">
+  <img class="emptycart"src="https://media.istockphoto.com/id/861576608/vector/empty-shopping-bag-icon-online-business-vector-icon-template.jpg?s=612x612&w=0&k=20&c=I7MbHHcjhRH4Dy0NVpf4ZN4gn8FVDnwn99YdRW2x5k0=">
+  <h2 class="empty-cart-message">
+     Your Cart is empty
+  </h2>
+  <button class="shopnow" [routerLink]="'/product'"> Shop Now</button>
+</ng-template>
 
+<div class="shopping-cart-container"  *ngIf="cartItems.length>0">
+  <h2 class="shopping-cart-header">Shopping Cart</h2>
+  <table class="">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems" >
+        <td class="shopping-cart-item-name">{{ item.fname }}</td>
+        <td class="shopping-cart-item-image">
+          <img [src]="item.image" [alt]="item.fname">
+        </td>
+        <td  class="shopping-cart-item-description">{{ item.description }}</td>
+        <td class="shopping-cart-item-quantity">
+          <input type="number" [(ngModel)]="item.quantity" (change)="updateTotal()" min="0" >
+        </td>
+        <td class="shopping-cart-item-price">{{ item.price | currency:"INR" }}</td>
+        <td class="shopping-cart-item-total">{{ item.price * item.quantity | currency:"INR" }}</td>
+        <td>
+          <button class="b" (click)="removeFromCart(item)">Remove</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="shopping-cart-total">
+    <p>Total: {{ total | currency:"INR" }}</p>
+    <button  class="b" (click)="checkout()" [routerLink]="'/review'">Checkout</button>
+  </div>
+</div> -->
