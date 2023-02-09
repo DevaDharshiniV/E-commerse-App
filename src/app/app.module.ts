@@ -34,6 +34,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProductService } from './product.service';
 import { KproductsComponent } from './kproducts/kproducts.component';
+import { SproductsComponent } from './sproducts/sproducts.component';
 
 
 
@@ -80,7 +81,11 @@ const routes: Routes = [
    {
     path: 'kproducts', component: KproductsComponent
    },
-   { path: 'fproduct/:id', component: FproductComponent
+   {
+    path: 'fproduct/:id', component: FproductComponent
+   },
+  {
+    path: 'sproducts', component: SproductsComponent
   }
 ];
 @NgModule({
@@ -98,7 +103,8 @@ const routes: Routes = [
     RegisterComponent,
     PaymentComponent,
     ConfirmationComponent,
-    KproductsComponent
+    KproductsComponent,
+    SproductsComponent
   ],
   imports: [
     BrowserModule,

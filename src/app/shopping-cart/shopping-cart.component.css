@@ -49,24 +49,6 @@ p {
   font-size: 1.2rem;
   cursor: pointer;
 }
-
-/* @media (max-width: 600px) {
-  table,
-  .total-container {
-    width: 100%;
-
-  }
-
-  img {
-    width: 10rem;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-  }
- .shopping-cart-item-description {
-    align-items: center;
-   }
- } */
  .emptycart {
   width: 400px;
   height: 300px;
