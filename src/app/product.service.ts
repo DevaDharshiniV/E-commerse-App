@@ -130,7 +130,33 @@ export class ProductService {
       image: '../../assets/img/rk.webp',
       price: 840,
       sizes: ['S', 'M', 'L', 'XL']
-    }
+    },
+    {
+      id: 21,
+      fname: 'Pink Color Net Base Party Wear Designer Gown',
+      details: [
+        'Fabric: Soft Net',
+        'Shape: Designer Gown',
+        'Occasion: Festive'
+      ],
+      description: 'Make a stunning appearance at your next party with this gorgeous pink designer gown. Crafted from delicate net material, this sleeveless gown features a fitted bodice and a flowing skirt for a flattering silhouette. Accessorize with statement earrings and high heels for a complete look.',
+      image: '../../assets/img/pg.jpg',
+      price: 1900,
+      sizes: ['S', 'M', 'L', 'XL']
+    },
+    {
+      id: 22,
+      fname: 'Olive Green Color Net Base Party Wear Designer Gown',
+      details: [
+      'Fabric: Soft Net',
+      'Shape: Designer Gown',
+      'Occasion: Festive'
+      ],
+      description: 'Make a bold statement at your next party with this stunning olive green designer gown. Made from delicate net material, this sleeveless gown has a fitted bodice and a flowing skirt for a flattering silhouette. Accessorize with statement jewelry and high heels for a complete look.',
+      image: '../../assets/img/gg.jpg',
+      price: 2000,
+      sizes: ['S', 'M', 'L', 'XL']
+      }
     // Add additional products here...
   ];
 
