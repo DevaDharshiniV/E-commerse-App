@@ -1,23 +1,24 @@
-<div class="product-page">
-  <img [src]="product.image" [alt]="product.fname">
+ <div class="product-page">
+  <img [src]="productData.productImgPath">
   <form>
     <div>
-      <h2 class="product-name">{{ product.fname }}</h2>
-      <h3 class="d">Details</h3>
-      <ul class="product-des">
-        <li *ngFor="let detail of product.details">{{ detail }}</li>
-      </ul>
+      <h2 class="product-name">{{ productData.name }}</h2>
       <h3 class="d">Description</h3>
-      <p class="product-des">{{ product.description }}</p>
-      <p class="product-price">Price: {{ product.price | currency:'INR' }}</p>
+      <p class="product-des">{{ productData.description }}</p>
+      <p class="product-price">Price: {{ productData.price | currency:'INR' }}</p>
       <div>
         <label for="size" class="size-selector">Size:</label>
-        <select id="size" [(ngModel)]="selectedSize">
-          <option *ngFor="let size of product.sizes" placeholder="S">{{size}}</option>
-        </select>
+  <select id="size" [(ngModel)]="selectedSize" name="size">
+    <option value="">Select size</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
       </div>
       <button (click)="addToCart()">Add to Cart</button>
       <p *ngIf="addedToCart" class="message">{{ message }}</p>
+      <button *ngIf="addedToCart"  [routerLink]="'/shopping-cart'">Buy now</button>
     </div>
   </form>
 </div>

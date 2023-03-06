@@ -1,48 +1,46 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
 interface Product {
-  title: string;
-  price: string;
-  imgSrc: string;
-  link: string;
-  alt: string;
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  productImgPath: string;
+  category: {
+    categoryId: string;
+    category: string;
+  };
+
 }
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
-  products: Product[] = [
-    {
-      title: 'Jaipur Kurta with Dupatta',
-      price: 'Rs. 940',
-      imgSrc: '../../assets/img/rc.jpg',
-      link: '/fproduct/1',
-      alt: 'Gorgeous jaipur kurta'
-    },
-    {
-      title: 'White Kurta',
-      price: 'Rs. 819',
-      imgSrc: '../../assets/img/wc.jpg',
-      link: '/fproduct/2',
-      alt: 'Photo of a White Kurta'
-    },
-    {
-      title: 'Black Georgette Gown',
-      price: 'Rs. 1159',
-      imgSrc: '../../assets/img/bc.jpg',
-      link: '/fproduct/3',
-      alt: 'Photo of a Black Gown'
-    },
-    {
-      title: 'Women Lehenga Choli',
-      price: 'Rs. 1899',
-      imgSrc: '../../assets/img/pc.jpg',
-      link: '/fproduct/4',
-      alt: 'Photo of a Lehenga'
+export class ProductComponent implements OnInit {
 
-    }
-  ];
+  productsArray: Product[] = [];
+  categoryObj: any; constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  ngOnInit(): void {
+    this.route.params.subscribe(val => {
+      console.log(val);
+      this.categoryObj = val;
+      this.productService.loadCategoryPosts(val['id']).subscribe(post => {
+        this.productsArray = post.map(post => {
 
+          return {
+            id: post.id,
+            ...post.data,
+            category: {
+              categoryId: post.data.category.categoryId,
+              category: post.data.category.category
+            },
+          };
+        });
+      })
+
+    })
+  }
 }

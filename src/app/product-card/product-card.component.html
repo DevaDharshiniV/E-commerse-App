@@ -1,0 +1,7 @@
+<div class="example-card" *ngIf="productData" [routerLink]="['/product',productData.id]">
+  <img class="example-card-image" [src]="productData.productImgPath" >
+  <div class="example-card-content">
+    <a ><h2>{{ productData.name }}</h2></a>
+    <h3>Rs.{{ productData.price }}</h3>
+  </div>
+</div>

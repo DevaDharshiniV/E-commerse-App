@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="form-field">
-          <label style="width: 40%;">Confirm Password</label>
+          <label>Confirm Password</label>
           <input type="password" formControlName="confirmPassword" placeholder="Re-enter Password">
           <div class="error-message" *ngIf="confirmPassword.invalid && confirmPassword.touched">
             {{ getConfirmPasswordErrorMessage() }}

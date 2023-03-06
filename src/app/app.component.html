@@ -1,31 +1,34 @@
-<!--<img src="rose.jpg">
-<img src="assets/img/logo.jpg" alt="">
 
-<img src="file:///C:/Users/user/e-commerceapp/src/assets/rose.jpg">
--->
 <mat-toolbar class="header mat-elevation-z5">
   <span class="logo">Girly</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon search-icon" aria-label="Example icon-button with search icon">
-    <mat-icon>search</mat-icon>
-  </button>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="'shopping-cart'">
     <mat-icon>shopping_cart</mat-icon>
   </button>
-  <!--<a routerLink='/login' style="text-decoration: none;">-->
+
+  <!-- <div *ngIf="isLoggedIn$ | async; else showLogin">
+    <a class="user">{{userEmail}}</a>
+    <button mat-button (click)="onLogout()"><span class="login">Logout</span></button>
+  </div> -->
+  <ng-container *ngIf="(isLoggedIn$ | async) && userEmail && userVerified; else showLogin">
+    <a class="user">{{userEmail}}</a>
+    <button mat-button (click)="onLogout()"><span class="login">Logout</span></button>
+  </ng-container>
+  <ng-template #showLogin>
+    <button mat-button><span class="login" routerLink="login">Login</span></button>
+  </ng-template>
+
   <button mat-button><span class="home" routerLink="">Home</span></button>
-  <button mat-button><span class="login" routerLink="login">Login</span></button><!--</a>-->
   <button mat-button><span class="about" routerLink="about">About</span></button>
   <button mat-button><span class="contact" routerLink="contact">Contact</span></button>
 </mat-toolbar>
+
 <mat-sidenav-container>
   <mat-sidenav [(opened)]="opened">
-    <mat-nav-list style="width: 200px;">
+    <mat-nav-list style="width: 200px;" *ngFor="let category of categoryArray">
 
-      <a mat-list-item><span class="nav" routerLink="kproducts">Kurtis & Kurta Sets</span></a>
-      <a mat-list-item><span class="nav" routerLink="sproducts">Sarees</span></a>
-      <a mat-list-item><span class="nav">Westernwear</span></a>
-      <a mat-list-item><span class="nav">Dupattas</span></a>
+      <a mat-list-item><span class="nav" [routerLink]="['/category',category.category,category.id]">{{category.category}}</span></a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

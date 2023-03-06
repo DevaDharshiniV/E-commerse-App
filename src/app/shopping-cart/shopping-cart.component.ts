@@ -36,14 +36,14 @@ export class ShoppingCartComponent implements OnInit{
     this.total = 0;
     this.cartItems.forEach(item => {
       this.total += item.price * item.quantity;
-      localStorage.setItem(item.fname, JSON.stringify(item));
+      localStorage.setItem(item.name, JSON.stringify(item));
     });
   }
 
   removeFromCart(item) {
     const index = this.cartItems.indexOf(item);
     this.cartItems.splice(index, 1);
-    localStorage.removeItem(item.fname);
+    localStorage.removeItem(item.name);
     this.updateTotal();
   }
 

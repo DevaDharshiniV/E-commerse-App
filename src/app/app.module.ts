@@ -33,34 +33,43 @@ import { RegisterComponent } from './register/register.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProductService } from './product.service';
-import { KproductsComponent } from './kproducts/kproducts.component';
-import { SproductsComponent } from './sproducts/sproducts.component';
-
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.prod';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
+import {MatBadgeModule} from '@angular/material/badge';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 
 const routes: Routes = [
+  {
+    path:'', component: HomeComponent
+  },
 
   {
-    path: '', component: ProductComponent
+    path: 'category/:category/:id', component: ProductComponent,
   },
   {
-    path: 'contact', component:ContactComponent
+    path: 'contact', component:ContactComponent,
   },
   {
     path: 'about', component:AboutComponent
   },
   {
-    path: 'fproduct', component:FproductComponent
+    path: 'product/:id', component:FproductComponent
   },
    {
-     path: 'shopping-cart', component:ShoppingCartComponent
+     path: 'shopping-cart', component:ShoppingCartComponent, canActivate: [AuthGuard]
    },
    {
-    path: 'review', component: ReviewComponent
+    path: 'review', component: ReviewComponent, canActivate: [AuthGuard]
    },
    {
-    path: 'address', component: AddressComponent
+    path: 'address', component: AddressComponent, canActivate: [AuthGuard]
    },
    {
     path: 'login', component: LoginComponent
@@ -69,24 +78,22 @@ const routes: Routes = [
     path: 'register', component:RegisterComponent
    },
    {
-    path: 'payment', component:PaymentComponent
+    path: 'payment', component:PaymentComponent, canActivate: [AuthGuard]
    },
    {
-    path: 'confirmation', component:ConfirmationComponent
+    path: 'confirmation', component:ConfirmationComponent, canActivate: [AuthGuard]
    },
 
    {
-    path: 'product', component:ProductComponent
+    path: 'product', component:ProductComponent, canActivate: [AuthGuard]
    },
    {
-    path: 'kproducts', component: KproductsComponent
+    path: 'forgot',component: ForgotPasswordComponent
    },
    {
-    path: 'fproduct/:id', component: FproductComponent
+    path: 'verify-email',component: VerifyEmailComponent
    },
-  {
-    path: 'sproducts', component: SproductsComponent
-  }
+
 ];
 @NgModule({
   declarations: [
@@ -103,8 +110,10 @@ const routes: Routes = [
     RegisterComponent,
     PaymentComponent,
     ConfirmationComponent,
-    KproductsComponent,
-    SproductsComponent
+    ProductCardComponent,
+    HomeComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,7 +134,11 @@ const routes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    MatBadgeModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     // RouterModule.forRoot([
     //   { path: 'product', component: ProductComponent }
     // ])

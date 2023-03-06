@@ -3,7 +3,7 @@
   <h2 class="empty-cart-message">
      Your Cart is empty
   </h2>
-  <button class="shopnow" [routerLink]="'/product'"> Shop Now</button>
+  <button class="shopnow" [routerLink]="'/'"> Shop Now</button>
 </ng-template>
 
 <div class="shopping-cart-container"  *ngIf="cartItems.length>0">
@@ -21,9 +21,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of cartItems" >
-        <td class="shopping-cart-item-name">{{ item.fname }}</td>
+        <td class="shopping-cart-item-name">{{ item.name }}</td>
         <td class="shopping-cart-item-image" >
-          <img [src]="item.image" [alt]="item.fname">
+          <img [src]="item.image" [alt]="item.name">
         </td>
         <td class="shopping-cart-item-quantity">
           <input type="number" [(ngModel)]="item.quantity" (change)="updateTotal()" min="1" style="width: 50px;">

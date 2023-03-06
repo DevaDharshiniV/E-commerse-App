@@ -1,0 +1,6 @@
+<h1 class="new">Trending Dresses</h1>
+<div class="c">
+  <div *ngFor="let featuredProduct of featuredPostsArray" class="c1">
+    <app-product-card [productData]="featuredProduct"></app-product-card>
+  </div>
+</div>

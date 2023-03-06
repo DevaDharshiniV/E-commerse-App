@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit{
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(6)]);
   confirmPassword = new FormControl('', [Validators.required, Validators.minLength(6)]);
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private auth: AuthService) {}
   ngOnInit() {
     this.registerForm = new FormGroup({
       email: this.email,
@@ -51,6 +52,8 @@ export class RegisterComponent implements OnInit{
       return;
     }
     console.log(this.registerForm.value);
+    this.auth.register(this.registerForm.value.email, this.registerForm.value.password);
+    this.registerForm.reset();
 
     // Perform registration logic
 
